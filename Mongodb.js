@@ -1,16 +1,16 @@
 /**
- * Created with IntelliJ IDEA.
+ *
  * User: zu
  * Date: 14-3-5
  * Time: 下午1:09
- * To change this template use File | Settings | File Templates.
+ *
  */
-var db = require('mongoskin').db('mongodb://192.168.3.140:27017/qegoo');
+var db = require('mongoskin').db('mongodb://192.168.3.140:27017/test');
 
-db.collection('catalog99').find().toArray(
-    function(err, result) {
+db.collection('zu1').insert( {name: "Guns N' Roses", members: ['Axl Rose', 'Slash', 'Izzy Stradlin', 'Matt Sorum', 'Duff McKagan'], year: 1986}
+    ,function(err, result){
         if (err) throw err;
-        console.log(result);
+        if (result) console.log('Added!');
     }
 )
 
